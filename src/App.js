@@ -48,13 +48,16 @@ function App() {
     }
   return (
   
-    <div className="App">
-   
+    <div className="App card col-5 mx-auto mt-5 blue-gradient white-text rounded-lg">
+      <h1>To Do List</h1>
       <ToDoList todos={todos} toggleTodo={toggleTodo}></ToDoList> 
      <input type="text" ref={todoNameRef}></input>
-     <button onClick={handleAddTodo}>Add Todo</button>
-     <button onClick={handleClearTodos}>Clear Complete</button>
-     <div>{todos.filter(todo => !todo.complete).length} left to do </div>
+     <div className="d-flex flex-row justify-content-around pt-3">
+     <button onClick={handleAddTodo} className="col-4 black white-text border-0 rounded-sm p-2">Add </button>
+     <button onClick={handleClearTodos} className="col-4 black white-text border-0 rounded-sm p-2">Clear</button>
+     </div>
+    
+     <div className='text border-top my-3'>{todos.filter(todo => !todo.complete).length} left to do </div>
     </div>
   );
 }
